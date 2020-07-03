@@ -15,4 +15,17 @@ router.get('/', (req,res)=>{
      });
 })
 
+router.get('/last', (req,res)=>{
+      mysqlConnection.query('SELECT * FROM zeus order by id_zeus desc limit 1', (err,rows,fields) => {
+            if(!err){
+               res.json(rows);
+
+            }else{
+
+               console.log(err)
+
+            }
+      });
+})
+
 module.exports = router;
