@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+const { get } = require('./routes/datos');
 const app = express();
 
 // Settings
